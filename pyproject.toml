@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "avsa"
+version = "1.0.0"
+description = "Analysis of CA DMV autonomous vehicle disengagement data: EDA, probability, hypothesis testing, and a Naive Bayes cause classifier."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Anunay Sharma" },
+    { name = "Aniruddha Sharma" },
+    { name = "Badrinarayanan R" },
+]
+dependencies = [
+    "pandas>=1.5",
+    "numpy>=1.23",
+    "scipy>=1.9",
+    "scikit-learn>=1.1",
+    "matplotlib>=3.6",
+    "seaborn>=0.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "black>=23.0", "flake8>=6.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
